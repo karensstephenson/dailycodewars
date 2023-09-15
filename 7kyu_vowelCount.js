@@ -19,12 +19,12 @@ function getCount(str) {
   console.log(getCount('aeiou'))
 
   //alternative also using filter() and includes()
-  function getCount(str) {
+function getCount(str) {
     return str.split('').filter(c => "aeiouAEIOU".includes(c)).length;
    }
 
    //alternative using a switch statement
-   function getCount(str) {
+function getCount(str) {
     var vowelsCount = 0;
     for (index in str){
       switch (str[index]) {
@@ -38,3 +38,4 @@ function getCount(str) {
       }   
     }
     return vowelsCount;
+}    
