@@ -33,8 +33,11 @@ console.log(removeSmallest([5,3,2,1,4]))
 console.log(removeSmallest([]))
 
 // shorter alternative
-// function removeSmallest2(numbers) {
-//     let indexOfMin = numbers.indexOf(Math.min(...numbers));
-//     return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
-//   }
+function removeSmallest2(numbers) {
+    let indexOfMin = numbers.indexOf(Math.min(...numbers));
+    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+  }
+
+//alternative using filter()
+const removeSmallest3 = numbers => numbers.filter((n,i) => i !== numbers.indexOf(Math.min(...numbers)));
 
