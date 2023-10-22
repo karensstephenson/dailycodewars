@@ -14,14 +14,27 @@
 // * Input: [5,3,2,1,4], output = [5,3,2,4]
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
-function removeSmallest(numbers) {
-    let min = numbers.reduce((a, b) => Math.min(a, b))
-    let index = numbers.indexOf(min)
-    return numbers.toSpliced(index, 1)
+
+function removeSmallest(arr) {
+    if (arr.length === 0) {
+        return arr
+    } else {
+        let index = arr.indexOf(Math.min(...arr))
+        // let index = arr.indexOf(arr.reduce((a, b) => Math.min(a, b)))
+        let remove = (arr, index) => [...arr.slice(0, index),...arr.slice(index + 1)]
+        let newArr = remove(arr, index)
+        return newArr 
+    }   
+    
 }
 
-console.log(removeSmallest([3]))
+console.log(removeSmallest([1,2,3,4,5]))
+console.log(removeSmallest([5,3,2,1,4]))
+console.log(removeSmallest([]))
 
-//works but not accepted as a solution by codewars as toSpliced() is not recognised (new function)
-
+// shorter alternative
+// function removeSmallest2(numbers) {
+//     let indexOfMin = numbers.indexOf(Math.min(...numbers));
+//     return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+//   }
 
