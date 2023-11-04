@@ -1,0 +1,29 @@
+# Count the number of divisors of a positive integer n.
+
+# Random tests go up to n = 500000.
+# Examples (input --> output)
+
+# 4 --> 3 // we have 3 divisors - 1, 2 and 4
+# 5 --> 2 // we have 2 divisors - 1 and 5
+# 12 --> 6 // we have 6 divisors - 1, 2, 3, 4, 6 and 12
+# 30 --> 8 // we have 8 divisors - 1, 2, 3, 5, 6, 10, 15 and 30
+
+# Note you should only return a number, the count of divisors. The numbers between parentheses are shown only for you to see which numbers are counted in each case.
+
+def divisors(n):
+    count = 0
+    for x in range(1, n+1):
+        if n % x == 0:
+            count += 1
+    return count
+
+print(divisors(1))
+print(divisors(4))
+print(divisors(5))
+print(divisors(12))
+print(divisors(30))
+print(divisors(4096))
+
+# alternative using sum()
+def divisors_2(n):
+    return sum(1 for x in range(1, n+1) if n % x == 0)
