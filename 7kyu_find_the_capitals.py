@@ -16,4 +16,5 @@ print(capitals("CodEWaRs"))
 
 # alternative using isupper()
 def capitals2(word):
-    return [i for i in range(len(word) if word[i].isupper())]
+    return [i for i in range(len(word)) if word[i].isupper()]
+
